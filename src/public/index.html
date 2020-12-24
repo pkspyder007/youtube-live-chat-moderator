@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Youtube Chat Moderator</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      h1 {
+        text-align: center;
+        font-size: 2rem;
+        text-decoration: underline;
+        font-weight: 100;
+      }
+      button {
+        padding: 10px;
+        margin: 12px;
+        font-size: 16px;
+        background: blanchedalmond;
+      }
+      .btn-grp {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      #res {
+        background: blanchedalmond;
+        text-align: center;
+        padding: 4px 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1><a href="https://github.com/pkspyder007/youtube-live-chat-moderator">Youtube Chat Moderator</a></h1>
+    <strong>By: <a href="https://thejsguy.me">Praveen</a></strong>
+    <div class="btn-grp">
+      <button>
+        <a href="/authorize"> Authorize </a>
+      </button>
+      <button>
+        <a href="/find-active-chat"> Get Active Chat </a>
+      </button>
+      <button>
+        <a href="/start-tracking-chat"> Start Tracking Chat </a>
+      </button>
+      <button>
+        <a href="/stop-tracking-chat"> Stop Tracking Chat </a>
+      </button>
+      <button>
+        <a href="/insert-message"> Insert Message </a>
+      </button>
+    </div>
+    <div id="res"></div>
+    <div class="info">
+      <ol>
+        <li>Authorize the bot to access your account and wait for the response</li>
+        <li>Click Get Active Chat this will get the first active live stream chat from your account</li>
+        <li>To start listening to the chat click the Start Tracking CHat button and wait for the response</li>
+        <li>To stop tracking the chat click the Stop tracking chat button </li>
+        <li>Insert message button adds a Hello everyone msg in the live chat</li>
+      </ol>
+      <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6747367888484663296?compact=1" height="350" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+    </div>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const myParam = urlParams.get('msg');
+      if(!myParam) myParam = ""
+      const resultDiv = document.querySelector("#res");
+      resultDiv.innerHTML = `<p>${myParam}</p> <p> Please look in console for more info.</p>`
+    </script>
+  </body>
+</html>
