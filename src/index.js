@@ -1,5 +1,8 @@
+// prototype phase file for youtube service
+
 const { google } = require("googleapis");
 const dotenv = require("dotenv");
+const { prototype } = require("./service/Youtube.service");
 dotenv.config();
 
 let liveChatId; // Where we'll store the id of our liveChat
